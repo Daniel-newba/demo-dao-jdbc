@@ -1,6 +1,7 @@
 package Application;
 
 import model.dao.DaoFactory;
+import model.dao.DepartmentDao;
 import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
@@ -23,8 +24,13 @@ public class Program {
         System.out.println(seller);
 
         System.out.println("=== test 2: SELLER FINDBYID DEPARTMENT =====");
-        Department department = new Department(2, null);
+        Department department = new Department(2,null);
         List<Seller> list = sellerDao.findByDepartment(department);
+        for (Seller obj : list){
+            System.out.println(obj);
+        }
+        System.out.println("=== test 3: SELLER FINDALL =====");
+        list = sellerDao.findAll();
         for (Seller obj : list){
             System.out.println(obj);
         }
